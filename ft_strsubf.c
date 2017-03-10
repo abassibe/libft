@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strsubf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/24 15:50:47 by abassibe          #+#    #+#             */
-/*   Updated: 2017/03/03 06:46:04 by abassibe         ###   ########.fr       */
+/*   Created: 2017/01/23 19:26:46 by abassibe          #+#    #+#             */
+/*   Updated: 2017/03/09 18:44:29 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strsubf(char const *s, unsigned int start, size_t len)
 {
-	char	*join;
-	int		i;
-	int		j;
+	char			*str;
+	unsigned int	c;
 
-	if (!s1 || !s2)
+	c = 0;
+	if (s == NULL)
 		return (NULL);
-	if (!(join = ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
+	while (c != len)
 	{
-		join[i] = s1[i];
-		i++;
+		str[c] = s[start];
+		c++;
+		start++;
 	}
-	while (s2[j])
-	{
-		join[i + j] = s2[j];
-		j++;
-	}
-	return (join);
+	str[c] = '\0';
+	free((void *)s);
+	return (str);
 }

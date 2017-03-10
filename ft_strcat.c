@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/19 14:30:38 by abassibe          #+#    #+#             */
-/*   Updated: 2017/01/20 23:47:26 by abassibe         ###   ########.fr       */
+/*   Updated: 2017/03/03 06:46:28 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int c;
-	int k;
+	size_t	i;
+	size_t	j;
 
-	c = 0;
-	k = 0;
-	while (s1[c] != '\0')
-		c++;
-	while (s2[k] != '\0')
+	i = 0;
+	while (s1[i])
+		i++;
+	j = 0;
+	while (s2[j])
 	{
-		s1[c] = s2[k];
-		c++;
-		k++;
+		s1[i + j] = s2[j];
+		j++;
 	}
-	s1[c] = '\0';
+	s1[i + j] = '\0';
 	return (s1);
 }

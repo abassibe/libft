@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoinf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 15:50:47 by abassibe          #+#    #+#             */
-/*   Updated: 2017/03/03 06:46:04 by abassibe         ###   ########.fr       */
+/*   Updated: 2017/03/09 18:44:41 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoinf(char const *s1, char const *s2)
 {
 	char	*join;
 	int		i;
@@ -34,5 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		join[i + j] = s2[j];
 		j++;
 	}
+	free((void *)s1);
+	free((void *)s2);
 	return (join);
 }

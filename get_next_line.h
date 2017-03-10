@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/24 15:50:47 by abassibe          #+#    #+#             */
-/*   Updated: 2017/03/03 06:46:04 by abassibe         ###   ########.fr       */
+/*   Created: 2017/02/23 13:50:58 by abassibe          #+#    #+#             */
+/*   Updated: 2017/03/10 23:18:27 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_strjoin(char const *s1, char const *s2)
+# include "libft.h"
+# define BUFF_SIZE 9
+
+typedef struct		s_buff
 {
-	char	*join;
-	int		i;
-	int		j;
+	int				fd;
+	int				ind;
+	char			*buff;
+	struct s_buff	*next;
+}					t_buff;
 
-	if (!s1 || !s2)
-		return (NULL);
-	if (!(join = ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		join[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		join[i + j] = s2[j];
-		j++;
-	}
-	return (join);
-}
+int					get_next_line(const int fd, char **line);
+int					read_file(t_buff *cpy, char **line, int fd);
+
+#endif
