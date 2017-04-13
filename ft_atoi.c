@@ -6,59 +6,35 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 02:53:50 by abassibe          #+#    #+#             */
-/*   Updated: 2017/02/22 20:54:02 by abassibe         ###   ########.fr       */
+/*   Updated: 2017/04/13 14:48:19 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	blank_check(const char *str, int c)
+int		ft_atoi(const char *str)
 {
-	while (str[c] == '\n' || str[c] == '\t' || str[c] == '\v' || str[c] == ' '
-			|| str[c] == '\f' || str[c] == '\r')
-		c++;
-	return (c);
-}
+	int		rep;
+	int		neg;
+	int		i;
 
-static int	min_max_val(const char *str, int c, unsigned int k, int p)
-{
-	int				ret;
-
-	ret = 1;
-	if (str[c] == '-' || str[c] == '+')
+	rep = 0;
+	neg = 0;
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[c] == '-')
-			p = 1;
-		c++;
+		if (str[i] == '-')
+			neg = 1;
+		i++;
 	}
-	while (str[c] >= '0' && str[c] <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		k *= 10;
-		k += str[c] - 48;
-		c++;
+		rep = (rep * 10) + str[i] - 48;
+		i++;
 	}
-	if (p == 1 && k > 2147483648)
-		return (0);
-	if (p == 0 && k > 2147483647)
-		return (-1);
-	if (p == 1)
-		ret = k * -1;
-	else
-		ret = k;
-	return (ret);
-}
-
-int			ft_atoi(const char *str)
-{
-	int				c;
-	int				ret;
-	int				p;
-	unsigned int	k;
-
-	c = 0;
-	k = 0;
-	p = 0;
-	c = blank_check(str, c);
-	ret = min_max_val(str, c, k, p);
-	return (ret);
+	if (neg)
+		return (-rep);
+	return (rep);
 }

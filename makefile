@@ -6,7 +6,7 @@
 #    By: abassibe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/01 12:45:53 by abassibe          #+#    #+#              #
-#    Updated: 2017/03/10 23:20:04 by abassibe         ###   ########.fr        #
+#    Updated: 2017/04/13 14:42:47 by abassibe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,10 +63,17 @@ SRCS = ft_atoi.c \
 	   ft_strsubf.c \
 	   ft_strjoin.c \
 	   ft_strjoinf.c \
+	   ft_strjoinff.c \
 	   ft_strjoinfn.c \
 	   ft_strtrim.c \
 	   ft_strsplit.c \
 	   ft_itoa.c \
+	   ft_itoa_long.c \
+	   ft_itoa_ulong.c \
+	   ft_itoa_base.c \
+	   ft_itoa_base_maj.c \
+	   ft_itoa_base_maj_unsigned.c \
+	   ft_itoa_base_unsigned.c \
 	   ft_lstnew.c \
 	   ft_lstdelone.c \
 	   ft_lstdel.c \
@@ -81,7 +88,7 @@ SRCS = ft_atoi.c \
 	   ft_swap.c \
 	   ft_replace.c \
 	   ft_count_char.c \
-	   get_next_line.c
+	   ft_isspace.c \
 
 OBJS = $(SRCS:.c=.o)
 
