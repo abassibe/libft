@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/22 09:04:09 by abassibe          #+#    #+#             */
-/*   Updated: 2017/04/13 14:16:55 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 04:15:55 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(const char *c)
 	if (!(c))
 		return ;
 	p = 0;
-	while (c[p] != '\0')
+	while (c[p])
 	{
 		ft_putchar(c[p]);
 		p++;

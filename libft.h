@@ -6,13 +6,14 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 16:49:31 by abassibe          #+#    #+#             */
-/*   Updated: 2017/04/13 14:43:09 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/28 00:14:52 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <limits.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -33,6 +34,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s1, int len);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
@@ -45,9 +47,11 @@ char				*ft_strnstr(const char *big, const char *little, size_t l);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
+long				ft_atoi_long(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
+int					ft_isspace(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
@@ -66,22 +70,26 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strsubf(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-char				*ft_strjoinf(char const *s1, char const *s2);
+char				*ft_strnjoin(char const *s1, char const *s2, int len);
+char				*ft_strjoinn(char const *s1, char const *s2, int len);
 char				*ft_strjoinf(char const *s1, char const *s2);
 char				*ft_strjoinfn(char const *s1, char const *s2);
-char				*ft_strjoinff(char const *s1, char const *s2);
+char				*ft_strjoinff(char *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+char				**ft_strsplit2(char const *s, char c, int range);
 char				*ft_itoa(int n);
 char				*ft_itoa_long(long int n);
 char				*ft_itoa_ulong(unsigned long int n);
 char				*ft_itoa_base(long long value, int base);
 char				*ft_itoa_base_maj(long long value, int base);
-char				*ft_itoa_base_unsigned(unsigned long long value, int base);
+char				*ft_itoa_base_us(unsigned long long value, int base);
 char				*ft_itoa_base_maj_unsigned(unsigned long long value,
 		int base);
+char				*ft_itoa_base_unicode(int value, int base);
 void				ft_putchar(char c);
 void				ft_putstr(const char *c);
+void				ft_putnstr(const char *c, int len);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
@@ -102,5 +110,8 @@ int					ft_sqrt(int nb);
 void				ft_swap(int *a, int *b);
 char				*ft_replace(char *str, char c1, char c2);
 int					ft_count_char(char *str);
-int					ft_isspace(int c);
+int					ft_power(int nb, int power);
+int					ft_btoi(char *str);
+int					get_next_line(const int fd, char **line);
+int					ft_abs(int value);
 #endif

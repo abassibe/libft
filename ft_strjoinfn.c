@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 15:50:47 by abassibe          #+#    #+#             */
-/*   Updated: 2017/04/11 18:59:34 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 01:43:25 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ char	*ft_strjoinfn(char const *s1, char const *s2)
 		join[i + j] = s2[j];
 		j++;
 	}
-	free((void *)s2);
 	return (join);
 }

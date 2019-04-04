@@ -6,12 +6,11 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 02:18:04 by abassibe          #+#    #+#             */
-/*   Updated: 2017/04/13 14:14:05 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 03:31:58 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		compte(long long nbr, int base)
 {
@@ -37,7 +36,8 @@ char			*ft_itoa_base(long long value, int base)
 	if (value == 0)
 		return (ft_strdup("0"));
 	nb = compte(value, base);
-	retour = (char *)malloc(nb + 1);
+	if (!(retour = ft_strnew(nb)))
+		return (NULL);
 	i = 1;
 	while (value != 0)
 	{

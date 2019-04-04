@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:02:13 by abassibe          #+#    #+#             */
-/*   Updated: 2017/02/22 21:09:35 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 04:16:03 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char const *s, int fd)
 	c = 0;
 	if (!s)
 		return ;
-	while (s[c] != '\0')
+	while (s[c])
 	{
 		ft_putchar_fd(s[c], fd);
 		c++;

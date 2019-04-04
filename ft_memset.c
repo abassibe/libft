@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 04:50:59 by abassibe          #+#    #+#             */
-/*   Updated: 2017/04/13 14:18:02 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 01:30:33 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,9 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*s;
-	size_t	k;
 
 	s = b;
-	k = 0;
-	while (k < len)
-	{
-		s[k] = c;
-		k++;
-	}
+	while (len-- > 0)
+		s[len] = c;
 	return (b);
 }

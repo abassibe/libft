@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:32:23 by abassibe          #+#    #+#             */
-/*   Updated: 2017/04/13 14:16:43 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 04:12:32 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *m;
+	void	*m;
 
-	m = (void *)malloc(size);
-	if (m == NULL)
+	if (!(m = (void *)malloc(size)))
 		return (NULL);
-	ft_memset(m, 0, size);
+	ft_bzero(m, size);
 	return (m);
 }

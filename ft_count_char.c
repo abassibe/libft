@@ -6,19 +6,18 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 21:02:19 by abassibe          #+#    #+#             */
-/*   Updated: 2017/02/10 21:13:04 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 03:27:52 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int		ft_count_char(char *str)
 {
 	int		i;
 
 	i = 0;
-	while (str[i] != '\n')
+	while (str[i] && str[i] != '\n')
 		i++;
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 14:37:21 by abassibe          #+#    #+#             */
-/*   Updated: 2017/01/26 14:55:47 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 03:36:35 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
 	del(((*alst)->content), (*alst)->content_size);
-	free(*alst);
+	ft_memdel((void **)alst);
 	*alst = NULL;
 }

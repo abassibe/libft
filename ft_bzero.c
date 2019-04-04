@@ -6,7 +6,7 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 05:06:09 by abassibe          #+#    #+#             */
-/*   Updated: 2017/01/21 06:31:51 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 01:57:48 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
-	size_t	c;
 
-	str = s;
-	c = 0;
-	while (c < n)
-	{
-		str[c] = '\0';
-		c++;
-	}
+	str = (char *)s;
+	while (n-- > 0)
+		str[n] = 0;
 }

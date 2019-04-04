@@ -6,12 +6,11 @@
 /*   By: abassibe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 23:46:32 by abassibe          #+#    #+#             */
-/*   Updated: 2017/02/09 06:47:04 by abassibe         ###   ########.fr       */
+/*   Updated: 2018/03/14 01:41:56 by abassibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_replace(char *str, char c1, char c2)
 {
